@@ -21,5 +21,8 @@ function startVideo() {
 }
 
 video.addEventListener('play', () => {
-    console.log('afadfgadg');
+    setInterval(async () =>{
+        const detections = await faceapi.detectAllFaces(video,
+        new faceapi.tinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+    }, 100)
 })
