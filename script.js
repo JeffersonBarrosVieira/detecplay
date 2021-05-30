@@ -61,7 +61,7 @@ video.addEventListener('play', () => {
                 emocao.innerHTML = "Você está Surpreso";
             }
         }else if(detections[0] == undefined){
-            emocao.innerHTML = "Carregando..."
+            emocao.innerHTML = "Identificando expressão..."
         }
     }, 400)
 })
