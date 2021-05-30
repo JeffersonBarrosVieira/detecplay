@@ -36,13 +36,15 @@ video.addEventListener('play', () => {
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
 
-        neutro = detections[0].expressions.Neutro
-        feliz = detections[0].expressions.Feliz
-        triste = detections[0].expressions.Triste
-        raiva = detections[0].expressions.Raiva
-        medo = detections[0].expressions.Medo
-        desgosto = detections[0].expressions.Desgosto
-        surpreso = detections[0].expressions.Surpreso
+        if(detections[0] !== undefined){
+            neutro = detections[0].expressions.Neutro
+            feliz = detections[0].expressions.Feliz
+            triste = detections[0].expressions.Triste
+            raiva = detections[0].expressions.Raiva
+            medo = detections[0].expressions.Medo
+            desgosto = detections[0].expressions.Desgosto
+            surpreso = detections[0].expressions.Surpreso
+        }
 
         if(parseFloat(neutro) > 0.5){
             emocao.innerHTML = "Você está Neutro";
@@ -58,6 +60,8 @@ video.addEventListener('play', () => {
             emocao.innerHTML = "Você está com Desgosto";
         }else if(parseFloat(surpreso) > 0.5){
             emocao.innerHTML = "Você está Surpreso";
+        }else if(detections[0] !== undefined){
+            emocao.innerHTML = "Carregando..."
         }
     }, 400)
 })
