@@ -32,6 +32,6 @@ video.addEventListener('play', () => {
         faceapi.draw.drawDetections(canvas, resizedDetections)
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        console.log(detections[0].expressions)
+        console.log(detections[0].expressions.Neutro)
     }, 400)
 })
