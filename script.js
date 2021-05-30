@@ -36,13 +36,13 @@ video.addEventListener('play', () => {
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
 
-        neutro = detections[0].expressions.Neutro
-        feliz = detections[0].expressions.Feliz
-        triste = detections[0].expressions.Triste
-        raiva = detections[0].expressions.Raiva
-        medo = detections[0].expressions.Medo
-        desgosto = detections[0].expressions.Desgosto
-        surpreso = detections[0].expressions.Surpreso
+        neutro = detections.expressions.Neutro
+        feliz = detections.expressions.Feliz
+        triste = detections.expressions.Triste
+        raiva = detections.expressions.Raiva
+        medo = detections.expressions.Medo
+        desgosto = detections.expressions.Desgosto
+        surpreso = detections.expressions.Surpreso
 
         if(parseFloat(neutro) > 0.5){
             emocao.innerHTML = "Você está Neutro";
