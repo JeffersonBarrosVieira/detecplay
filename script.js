@@ -26,7 +26,7 @@ video.addEventListener('play', () => {
     const displaySize = { width: video.width, height: video.height }
     faceapi.matchDimensions(canvas, displaySize)
 
-    let neutro,feliz,desgosto,triste,raiva = 0
+    let neutro,feliz,triste,raiva,medo,desgosto = 0
     setInterval(async () =>{
         const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
@@ -36,6 +36,11 @@ video.addEventListener('play', () => {
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
 
         neutro = detections[0].expressions.Neutro
-        console.log(detections[0].expressions)
+        feliz = detections[0].expressions.Feliz
+        raiva = detections[0].expressions.Raiva
+        medo = detections[0].expressions.Medo
+        desgosto = detections[0].expressions.Desgosto
+
+        console.log(neutro)
     }, 400)
 })
