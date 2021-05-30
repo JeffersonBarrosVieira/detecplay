@@ -27,7 +27,7 @@ video.addEventListener('play', () => {
     const displaySize = { width: video.width, height: video.height }
     faceapi.matchDimensions(canvas, displaySize)
 
-    let neutro,feliz,triste,raiva,medo,desgosto = 0
+    let neutro,feliz,triste,raiva,medo,desgosto,surpreso = 0
     setInterval(async () =>{
         const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
@@ -42,6 +42,7 @@ video.addEventListener('play', () => {
         raiva = detections[0].expressions.Raiva
         medo = detections[0].expressions.Medo
         desgosto = detections[0].expressions.Desgosto
+        surpreso = detections[0].expressions.Surpreso
 
         if(parseFloat(neutro) > 0.5){
             emocao.innerHTML = "Você está Neutro";
@@ -55,6 +56,8 @@ video.addEventListener('play', () => {
             emocao.innerHTML = "Você está com Medo";
         }else if(parseFloat(desgosto) > 0.5){
             emocao.innerHTML = "Você está com Desgosto";
+        }else if(parseFloat(surpreso) > 0.5){
+            emocao.innerHTML = "Você está Surpreso";
         }
     }, 400)
 })
