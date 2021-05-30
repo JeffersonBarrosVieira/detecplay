@@ -44,23 +44,23 @@ video.addEventListener('play', () => {
             medo = detections[0].expressions.Medo
             desgosto = detections[0].expressions.Desgosto
             surpreso = detections[0].expressions.Surpreso
-        }
 
-        if(parseFloat(neutro) > 0.5){
-            emocao.innerHTML = "Você está Neutro";
-        }else if(parseFloat(feliz) > 0.5){
-            emocao.innerHTML = "Você está Feliz";
-        }else if(parseFloat(triste) > 0.5){
-            emocao.innerHTML = "Você está Triste";
-        }else if(parseFloat(raiva) > 0.5){
-            emocao.innerHTML = "Você está com Raiva";
-        }else if(parseFloat(medo) > 0.5){
-            emocao.innerHTML = "Você está com Medo";
-        }else if(parseFloat(desgosto) > 0.5){
-            emocao.innerHTML = "Você está com Desgosto";
-        }else if(parseFloat(surpreso) > 0.5){
-            emocao.innerHTML = "Você está Surpreso";
-        }else if(detections[0] !== undefined){
+            if(parseFloat(neutro) > 0.5){
+                emocao.innerHTML = "Você está Neutro";
+            }else if(parseFloat(feliz) > 0.5){
+                emocao.innerHTML = "Você está Feliz";
+            }else if(parseFloat(triste) > 0.5){
+                emocao.innerHTML = "Você está Triste";
+            }else if(parseFloat(raiva) > 0.5){
+                emocao.innerHTML = "Você está com Raiva";
+            }else if(parseFloat(medo) > 0.5){
+                emocao.innerHTML = "Você está com Medo";
+            }else if(parseFloat(desgosto) > 0.5){
+                emocao.innerHTML = "Você está com Desgosto";
+            }else if(parseFloat(surpreso) > 0.5){
+                emocao.innerHTML = "Você está Surpreso";
+            }
+        }else if(detections[0] == undefined){
             emocao.innerHTML = "Carregando..."
         }
     }, 400)
