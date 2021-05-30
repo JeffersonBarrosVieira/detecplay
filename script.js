@@ -1,4 +1,5 @@
 const video = document.getElementById('video');
+let emocao = document.getElementById('emocao');
 
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -37,10 +38,15 @@ video.addEventListener('play', () => {
 
         neutro = detections[0].expressions.Neutro
         feliz = detections[0].expressions.Feliz
+        triste = detections[0].expressions.Triste
         raiva = detections[0].expressions.Raiva
         medo = detections[0].expressions.Medo
         desgosto = detections[0].expressions.Desgosto
 
-        console.log(neutro)
+        if(parseFloat(neutro) > 0.5){
+            emocao.innerHTML = "Você está Neutro";
+        }else if(parseFloat(feliz) > 0.5){
+            emocao.innerHTML = "Você está Feliz";
+        }
     }, 400)
 })

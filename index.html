@@ -24,12 +24,19 @@
         video {
             opacity: 0.8;
             position: absolute;
+            width: 0;
+            height: 0;
             left: 0;
             top: 0;
         }
 
         canvas {
+            opacity: 0;
+            width: 0;
+            height: 0;
             position: absolute;
+            left: 0;
+            top: 0;
         }
 
     </style>
@@ -38,5 +45,6 @@
 <body>
     <video id="video" width= "360" height= "265" autoplay muted>
     </video>
+    <h1 id="emocao"></h1>
 </body>
 </html>
