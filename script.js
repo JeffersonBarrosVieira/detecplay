@@ -47,6 +47,14 @@ video.addEventListener('play', () => {
             emocao.innerHTML = "Você está Neutro";
         }else if(parseFloat(feliz) > 0.5){
             emocao.innerHTML = "Você está Feliz";
+        }else if(parseFloat(triste) > 0.5){
+            emocao.innerHTML = "Você está Triste";
+        }else if(parseFloat(raiva) > 0.5){
+            emocao.innerHTML = "Você está com Raiva";
+        }else if(parseFloat(medo) > 0.5){
+            emocao.innerHTML = "Você está com Medo";
+        }else if(parseFloat(desgosto) > 0.5){
+            emocao.innerHTML = "Você está com Desgosto";
         }
     }, 400)
 })
