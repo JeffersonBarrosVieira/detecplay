@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Jefferson Barros Vieira">
+    <meta name="reply-to" content="[jefferson.negociom03@gmail.com]">
+
+    <meta name="copyright" content="© 2021 Jefferson Barros Vieira" />
+
+
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="revisit-after" content="7 days" /> 
+
+    <meta name="generator" content="Visual Studio Code" />
+
     <title>DetecPlay</title>
     <link rel="shortcut icon" href="#" />
     <script defer src="face-api.min.js"></script>
@@ -39,6 +51,14 @@
             top: 0;
         }
 
+        #indicador {
+            opacity: 0;
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+
     </style>
 </head>
 
@@ -46,5 +66,6 @@
     <video id="video" width= "360" height= "265" autoplay muted>
     </video>
     <h1 id="emocao">Carregando...</h1>
+    <a href="#" id="indicador"></a>
 </body>
 </html>

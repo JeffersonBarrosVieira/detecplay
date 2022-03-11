@@ -47,10 +47,16 @@ video.addEventListener('play', () => {
 
             if(parseFloat(neutro) > 0.5){
                 emocao.innerHTML = "Você está Neutro";
+                document.getElementById('indicador').style.backgroundColor = 'yellow';
+                document.getElementById('indicador').style.opacity = '1';
             }else if(parseFloat(feliz) > 0.5){
                 emocao.innerHTML = "Você está Feliz";
+                document.getElementById('indicador').style.backgroundColor = 'blue';
+                document.getElementById('indicador').style.opacity = '1';
             }else if(parseFloat(triste) > 0.5){
                 emocao.innerHTML = "Você está Triste";
+                document.getElementById('indicador').style.backgroundColor = 'red';
+                document.getElementById('indicador').style.opacity = '1';
             }else if(parseFloat(raiva) > 0.5){
                 emocao.innerHTML = "Você está com Raiva";
             }else if(parseFloat(medo) > 0.5){
@@ -59,6 +65,8 @@ video.addEventListener('play', () => {
                 emocao.innerHTML = "Você está com Desgosto";
             }else if(parseFloat(surpreso) > 0.5){
                 emocao.innerHTML = "Você está Surpreso";
+                document.getElementById('indicador').style.backgroundColor = 'red';
+                document.getElementById('indicador').style.opacity = '1';
             }
         }else if(detections[0] == undefined){
             emocao.innerHTML = "Identificando expressão..."
